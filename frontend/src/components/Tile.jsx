@@ -1,12 +1,11 @@
-const Tile = ({ active, children }) => {
+const Tile = ({ active, onClick }) => {
   return (
-    <div
-      className={`w-20 h-20 rounded flex items-center justify-center ${
-        active ? "bg-primary text-primary-content" : "bg-base-200"
+    <button
+      onClick={onClick}
+      className={`btn btn-xs w-40 h-40 rounded-xl cursor-pointer ${
+        active ? "bg-blue-500" : "bg-base-200 hover:bg-base-300"
       }`}
-    >
-      {children}
-    </div>
+    ></button>
   );
 };
 
