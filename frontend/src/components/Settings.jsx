@@ -17,7 +17,7 @@ const Settings = ({ onSave }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-56 max-w-md border p-6">
+      <fieldset className="fieldset bg-base-200 border-base-300 rounded-box w-56 max-w-md border p-6 ml-28">
         <legend className="fieldset-legend text-lg">Settings</legend>
 
         <label className="label text-md">n-Back</label>
@@ -44,7 +44,7 @@ const Settings = ({ onSave }) => {
           <option value="20">20</option>
         </select>
 
-        <button type="submit" className="btn btn-ghost bg-blue-500">
+        <button type="submit" className="btn btn-ghost bg-blue-500 rounded-md">
           Apply
         </button>
       </fieldset>

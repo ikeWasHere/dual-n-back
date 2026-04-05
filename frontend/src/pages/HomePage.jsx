@@ -1,7 +1,17 @@
 import { useState } from "react";
+import toast from "react-hot-toast";
+
 import Navbar from "../components/Navbar";
 import Tile from "../components/Tile";
 import Settings from "../components/Settings";
+import { genRandomTileId } from "../nBack";
+
+// TODO:
+// - Add 6-7 voiced letters in sync with shown tiles, store that set
+// - Compare player choice based on n level and keep score
+// - Add stop button mid round
+
+const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const HomePage = () => {
   const [tiles, setTiles] = useState([
@@ -24,6 +34,39 @@ const HomePage = () => {
     setTiles(tiles.map((tile) => ({ ...tile, active: tile.id === id })));
   };
 
+  const startGame = async (gameSettings) => {
+    const roundLength = 20;
+
+    setIsPlaying(true);
+    toast.success("Game starting");
+
+    for (let i = 0; i < roundLength; i++) {
+      const randomTileId = genRandomTileId();
+
+      setTiles((prev) =>
+        prev.map((tile) => ({
+          ...tile,
+          active: tile.id === randomTileId,
+        })),
+      );
+
+      console.log(i, randomTileId);
+
+      await wait(1000);
+
+      setTiles((prev) =>
+        prev.map((tile) => ({
+          ...tile,
+          active: false,
+        })),
+      );
+
+      await wait(2000);
+    }
+
+    setIsPlaying(false);
+  };
+
   return (
     <>
       <Navbar />
@@ -38,7 +81,20 @@ const HomePage = () => {
               ></Tile>
             ))}
           </div>
-          <Settings onSave={setGameSettings} />
+
+          {!isPlaying && (
+            <div className="flex items-center">
+              <Settings onSave={setGameSettings} />
+              <button
+                className="btn btn-ghost bg-green-500 w-24 rounded-md ml-4"
+                onClick={() => startGame(gameSettings)}
+              >
+                Play
+              </button>
+            </div>
+          )}
+
+          {isPlaying && <h1>Playing </h1>}
         </div>
       </main>
     </>
