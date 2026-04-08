@@ -1,4 +1,5 @@
 import { useRef, useState, useCallback } from "react";
+import { EarIcon, EyeIcon } from "lucide-react";
 
 import Navbar from "../components/Navbar";
 import Tile from "../components/Tile";
@@ -90,16 +91,16 @@ const HomePage = () => {
             <>
               <div className="flex items-center gap-10">
                 <button
-                  className={`btn btn-ghost w-32 rounded-md transition-colors duration-300 ${btnStyle("position")}`}
+                  className={`btn btn-ghost w-40 rounded-md transition-colors duration-300 ${btnStyle("position")}`}
                   onClick={() => handleResponse("position")}
                 >
-                  Position
+                  <EyeIcon className="w-4 h-4" />
                 </button>
                 <button
-                  className={`btn btn-ghost w-32 rounded-md transition-colors duration-300 ${btnStyle("audio")}`}
+                  className={`btn btn-ghost w-40 rounded-md transition-colors duration-300 ${btnStyle("audio")}`}
                   onClick={() => handleResponse("audio")}
                 >
-                  Sound
+                  <EarIcon className="w-4 h-4" />
                 </button>
               </div>
               <button className="btn btn-ghost bg-red-500 w-24 rounded-md" onClick={stopGame}>
