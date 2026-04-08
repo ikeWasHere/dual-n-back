@@ -1,9 +1,9 @@
-import audioA from "../res/audio/A.wav";
-import audioE from "../res/audio/E.wav";
-import audioH from "../res/audio/H.wav";
-import audioK from "../res/audio/K.wav";
-import audioL from "../res/audio/L.wav";
-import audioO from "../res/audio/O.wav";
+import audioA from "./assets/audio/A.wav";
+import audioE from "./assets/audio/E.wav";
+import audioH from "./assets/audio/H.wav";
+import audioK from "./assets/audio/K.wav";
+import audioL from "./assets/audio/L.wav";
+import audioO from "./assets/audio/O.wav";
 
 const LETTERS = ["A", "E", "H", "K", "L", "O"];
 const AUDIO_MAP = { A: audioA, E: audioE, H: audioH, K: audioK, L: audioL, O: audioO };

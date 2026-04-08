@@ -2,6 +2,10 @@
 
 Dual n-back is a cognitive training exercise designed to improve working memory and fluid intelligence. There are other versions online but I decided to make my own because they are either dated, or certain features are paywalled. This implementation is not perfect, but I felt like making it. So enjoy.
 
+## Example
+
+![Dual n-back game UI](./frontend/docs/screenshot.png)
+
 ## Instructions
 
 1. **Choose your level**
