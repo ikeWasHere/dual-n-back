@@ -68,9 +68,6 @@ const HomePage = () => {
     setIsPlaying(false);
   };
 
-  const roundLength = 20;
-  const turnDisplay = turnIndex >= 0 ? `${turnIndex + 1} / ${roundLength}` : "";
-
   const btnStyle = (type) => {
     if (feedback && pressedThisTurn[type]) {
       return feedback[type] ? "bg-green-500 text-white" : "bg-red-500 text-white";
